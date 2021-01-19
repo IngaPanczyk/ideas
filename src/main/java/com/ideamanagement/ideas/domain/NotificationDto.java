@@ -4,20 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import java.time.LocalDate;
 
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "ideas")
-public class Idea {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+@Getter
+public class NotificationDto {
     private Long id;
-    @Column
     private String subject;
-    @Column
     private String description;
-    @Column
-    private String status;
+    private LocalDate reportingDate;
+    private Status status;
+    private IdeaExpert ideaExpert;
+    private User user;
+
 }
