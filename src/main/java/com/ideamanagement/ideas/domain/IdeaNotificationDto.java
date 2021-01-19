@@ -9,12 +9,13 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class NotificationDto {
+public class IdeaNotificationDto {
+
     private Long id;
     private String subject;
     private String description;
     private LocalDate reportingDate;
-    private Status status;
+    private IdeaStatus status;
     private IdeaExpert ideaExpert;
     private User user;
 

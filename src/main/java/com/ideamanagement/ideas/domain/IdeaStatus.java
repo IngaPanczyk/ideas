@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity(name = "STATUSES")
 @Component
-public class Status {
+public class IdeaStatus {
     @Id
     @Column(name = "status_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,11 +23,11 @@ public class Status {
     @Column
     public String notificationStatus;
 
-    @Column
-    @OneToMany(targetEntity = Notification.class,
+
+    @OneToMany(targetEntity = IdeaNotification.class,
             mappedBy = "status",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    public List<Notification> notificationList = new ArrayList<>();
+    public List<IdeaNotification> ideaNotificationList = new ArrayList<>();
 }

@@ -22,13 +22,16 @@ public final class IdeaExpert {
     @Column
     private String expertName;
 
-    @Column
-    @OneToMany(targetEntity = Notification.class,
+
+    @OneToMany(targetEntity = IdeaNotification.class,
             mappedBy = "ideaExpert",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.MERGE,
             fetch = FetchType.LAZY
     )
-    public List<Notification> notificationList = new ArrayList<>();
+    public List<IdeaNotification> ideaNotificationList = new ArrayList<>();
 
-
+    public IdeaExpert(String expertName, List<IdeaNotification> ideaNotificationList) {
+        this.expertName = expertName;
+        this.ideaNotificationList = ideaNotificationList;
+    }
 }

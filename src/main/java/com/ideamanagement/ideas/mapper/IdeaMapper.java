@@ -1,23 +1,20 @@
 package com.ideamanagement.ideas.mapper;
 
-import com.ideamanagement.ideas.domain.Notification;
-import com.ideamanagement.ideas.domain.NotificationDto;
+import com.ideamanagement.ideas.domain.IdeaNotification;
+import com.ideamanagement.ideas.domain.IdeaNotificationDto;
 import org.springframework.stereotype.Component;
 
-
-import java.util.List;
-import java.util.stream.Collectors;
 @Component
 public class IdeaMapper {
-    public Notification mapToIdea (final NotificationDto notificationDto){
-        return new Notification(
-                notificationDto.getId(),
-                notificationDto.getSubject(),
-                notificationDto.getDescription(),
-                notificationDto.getReportingDate(),
-                notificationDto.getStatus(),
-                notificationDto.getIdeaExpert(),
-                notificationDto.getUser()
+    public IdeaNotification mapToIdea (final IdeaNotificationDto ideaNotificationDto){
+        return new IdeaNotification(
+                ideaNotificationDto.getId(),
+                ideaNotificationDto.getSubject(),
+                ideaNotificationDto.getDescription(),
+                ideaNotificationDto.getReportingDate(),
+                ideaNotificationDto.getStatus(),
+                ideaNotificationDto.getIdeaExpert(),
+                ideaNotificationDto.getUser()
         );
     }
   /*  public NotificationDto mapToIdeaDto (final Notification idea){

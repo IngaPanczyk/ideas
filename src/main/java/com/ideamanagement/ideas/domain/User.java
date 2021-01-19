@@ -23,11 +23,10 @@ public class User {
     @Column
     String username;
 
-    @Column
-    @OneToMany(targetEntity = Notification.class,
+    @OneToMany(targetEntity = IdeaNotification.class,
             mappedBy = "user",
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    public List<Notification> notificationList = new ArrayList<>();
+    public List<IdeaNotification> ideaNotificationList = new ArrayList<>();
 }

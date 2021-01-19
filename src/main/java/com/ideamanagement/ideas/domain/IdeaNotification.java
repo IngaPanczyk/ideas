@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "NOTIFICATION")
-public class Notification {
+public class IdeaNotification {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @NotNull
@@ -27,7 +27,7 @@ public class Notification {
 
     @ManyToOne
     @JoinColumn(name = "status_id")
-    private Status status;
+    private IdeaStatus status;
 
     @ManyToOne
     @JoinColumn(name = "expert_id")
