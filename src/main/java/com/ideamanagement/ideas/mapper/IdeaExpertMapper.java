@@ -16,6 +16,14 @@ public class IdeaExpertMapper {
                 ideaExpertDto.getIdeaNotificationList()
         );
     }
+
+    public IdeaExpertDto mapToIdeaExpertDto( final IdeaExpert ideaExpert){
+        return new IdeaExpertDto(
+                ideaExpert.getExpertId(),
+                ideaExpert.getExpertName(),
+                ideaExpert.getIdeaNotificationList()
+        );
+    }
     public List<IdeaExpertDto> mapToIdeaExpertDtoList( final List<IdeaExpert> ideaExpertList){
         return ideaExpertList.stream()
         .map(t->new IdeaExpertDto(t.getExpertId(),t.getExpertName(),t.getIdeaNotificationList()))

@@ -4,6 +4,9 @@ import com.ideamanagement.ideas.domain.IdeaNotification;
 import com.ideamanagement.ideas.domain.IdeaNotificationDto;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class IdeaMapper {
     public IdeaNotification mapToIdea (final IdeaNotificationDto ideaNotificationDto){
@@ -17,17 +20,20 @@ public class IdeaMapper {
                 ideaNotificationDto.getUser()
         );
     }
-  /*  public NotificationDto mapToIdeaDto (final Notification idea){
-        return new NotificationDto(
+    public IdeaNotificationDto mapToIdeaDto (final IdeaNotification idea){
+        return new IdeaNotificationDto(
                 idea.getId(),
                 idea.getSubject(),
                 idea.getDescription(),
-                idea.getStatus()
+                idea.getReportingDate(),
+                idea.getStatus(),
+                idea.getIdeaExpert(),
+                idea.getUser()
         );
     }
-    public List<NotificationDto> mapToIdeaDtoList (final  List<Notification> ideaList){
+    public List<IdeaNotificationDto> mapToIdeaDtoList (final  List<IdeaNotification> ideaList){
         return ideaList.stream()
-                .map(t-> new NotificationDto(t.getId(), t.getSubject(), t.getDescription(), t.getStatus()))
+                .map(t-> new IdeaNotificationDto(t.getId(), t.getSubject(), t.getDescription(), t.getReportingDate(), t.getStatus(), t.getIdeaExpert(), t.getUser()))
                 .collect(Collectors.toList());
-    }*/
+    }
 }
